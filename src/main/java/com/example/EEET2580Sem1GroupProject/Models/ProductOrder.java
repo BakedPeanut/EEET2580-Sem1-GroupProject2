@@ -8,7 +8,7 @@ import java.util.Set;
 @Table
 public class ProductOrder {
     public enum Status {
-        Completed, Pending, Declined
+        Completed, Pending, Declined, InCart
     }
 
     public ProductOrder() {
