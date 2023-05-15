@@ -40,4 +40,8 @@ public class ProductService {
         System.out.println(product.getName());
         productRepository.save(product);
     }
+    public void deleteProduct(int id){
+        Product product = productRepository.getOne(Long.valueOf(id));
+        productRepository.delete(product);
+    }
 }

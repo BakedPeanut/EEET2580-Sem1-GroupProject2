@@ -10,22 +10,25 @@ import java.util.List;
 
 @Service
 public class BuyerService {
-//
-//    @Autowired
-//    BuyerRepository buyerRepository;
-//
-//    public List<Buyer> getAllBuyers(){
-//        return buyerRepository.findAll();
-//    }
-//
-//    public Buyer getBuyerById(Long id){
-//        return buyerRepository.findByBuyerID(id);
-//    }
-//
-//    public void addBuyer(Buyer seller){
-//        buyerRepository.save(seller);
-//    }
-//
 
+    @Autowired
+    BuyerRepository buyerRepository;
+
+    public List<Buyer> getAllBuyers(){
+        return buyerRepository.findAll();
+    }
+
+    public Buyer getBuyerById(Long id){
+        return buyerRepository.findByBuyerID(id);
+    }
+
+    public void addBuyer(Buyer seller){
+        buyerRepository.save(seller);
+    }
+
+    public void deleteBuyer(Long id){
+        Buyer buyer = buyerRepository.getOne(Long.valueOf(id));
+        buyerRepository.delete(buyer);
+    }
 
 }

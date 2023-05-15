@@ -28,4 +28,10 @@ public class SellerController {
     public void addSeller(@RequestBody Seller seller){
         sellerService.addSeller(seller);
     }
+
+    @RequestMapping(path = "{id}", method = RequestMethod.DELETE)
+    public void deleteSeller(@PathVariable int id){
+        this.sellerService.deleteSeller(id);
+    }
+
 }

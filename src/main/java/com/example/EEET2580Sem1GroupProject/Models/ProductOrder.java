@@ -14,6 +14,8 @@ public class ProductOrder {
     public ProductOrder() {
     }
 
+
+
     @Id
     @GeneratedValue( strategy = GenerationType.IDENTITY)
     protected Integer orderID;
@@ -27,5 +29,13 @@ public class ProductOrder {
 
     @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER, mappedBy = "productOrder")
     public Set<OrderDetail> orderDetails;
+
+    public Integer getOrderID() {
+        return orderID;
+    }
+
+    public void setOrderID(Integer orderID) {
+        this.orderID = orderID;
+    }
 
 }

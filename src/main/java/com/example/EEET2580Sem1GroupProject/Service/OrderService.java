@@ -16,19 +16,23 @@ import java.util.Optional;
 @Service
 public class OrderService {
 
-//    @Autowired
-//    private OrderRepository orderRepository;
-//
-//    public List<ProductOrder> getAllOrder(){
-//        return orderRepository.findAll();
-//    }
-//
-//    public ProductOrder getOrderById(Long id){
-//        return orderRepository.findByOrderID(id);
-//    }
-//
-//    public void addProduct(ProductOrder order){
-//        orderRepository.save(order);
-//    }
+    @Autowired
+    private OrderRepository orderRepository;
+
+    public List<ProductOrder> getAllOrder(){
+        return orderRepository.findAll();
+    }
+
+    public ProductOrder getOrderById(Long id){
+        return orderRepository.findByOrderID(id);
+    }
+
+    public void addOrder(ProductOrder order){
+        orderRepository.save(order);
+    }
+    public void deleteOrder(Long id){
+        ProductOrder order = orderRepository.getOne(Long.valueOf(id));
+        orderRepository.delete(order);
+    }
 
 }

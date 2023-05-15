@@ -30,8 +30,6 @@ public class Product {
     @ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     private Seller seller;
 
-    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER, mappedBy = "product")
-    public Set<OrderDetail> orderDetails;
 
 
     public Long getProductID() {
@@ -50,13 +48,6 @@ public class Product {
         this.seller = seller;
     }
 
-    public Set<OrderDetail> getOrderDetails() {
-        return orderDetails;
-    }
-
-    public void setOrderDetails(Set<OrderDetail> orderDetails) {
-        this.orderDetails = orderDetails;
-    }
 
     public String getName() {
         return name;
