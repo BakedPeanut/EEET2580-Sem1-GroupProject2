@@ -18,6 +18,9 @@ public class Product {
     @Column
     private String description;
 
+    @Column
+    private String brand;
+
     @Column(columnDefinition="TEXT")
     private String background;
 
@@ -87,5 +90,13 @@ public class Product {
 
     public void setImages(Set<Image> images) {
         this.images = images;
+    }
+
+    public String getBrand() {
+        return brand;
+    }
+
+    public void setBrand(String brand) {
+        this.brand = brand;
     }
 }

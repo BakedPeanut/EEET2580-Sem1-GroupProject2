@@ -4,13 +4,17 @@ import com.example.EEET2580Sem1GroupProject.Models.Product;
 import com.example.EEET2580Sem1GroupProject.Models.Seller;
 import org.springframework.data.jpa.repository.JpaRepository;
 
+import java.util.List;
+
 public interface ProductRepository extends JpaRepository <Product, Long>{
     Product findByProductID(Long id);
 
-    Product findByOrderByPriceAsc();
+    List<Product> findByOrderByPriceAsc();
 
-    Product findByOrderByPriceDesc();
+    List<Product> findByOrderByPriceDesc();
 
-    Product findByName(String name);
+    List<Product> findByName(String name);
+
+    List<Product> findByBrand(String brand);
 
 }

@@ -31,4 +31,15 @@ public class ProductController {
         this.productService.deleteProduct(id);
     }
 
+    @GetMapping(path = "priceAsc")
+    public List<Product> SortByPriceAsc(){return productService.sortByPriceAsc();}
+
+    @GetMapping(path = "priceDesc")
+    public List<Product> SortByPriceDesc(){return productService.sortByPriceDesc();}
+
+    @GetMapping(path = "{name}")
+    public List<Product> FindByName(String name){return productService.findByName(name);}
+
+    @GetMapping(path = "{brand}")
+    public List<Product> FindByBrand(String brand){return productService.findByBrand(brand);}
 }

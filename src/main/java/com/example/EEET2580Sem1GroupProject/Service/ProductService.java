@@ -44,13 +44,15 @@ public class ProductService {
         Product product = productRepository.getOne(Long.valueOf(id));
         productRepository.delete(product);
     }
-    public Product sortByPriceAsc(){
+    public List<Product> sortByPriceAsc(){
         return productRepository.findByOrderByPriceAsc();
     }
-    public Product sortByPriceDesc(){
+    public List<Product> sortByPriceDesc(){
         return productRepository.findByOrderByPriceDesc();
     }
-    public Product findByName(String name){
+    public List<Product> findByName(String name){
         return productRepository.findByName(name);
     }
+
+    public List<Product> findByBrand(String brand) {return productRepository.findByBrand(brand);}
 }
