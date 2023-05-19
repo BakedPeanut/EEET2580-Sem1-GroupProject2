@@ -2,15 +2,13 @@ package com.example.EEET2580Sem1GroupProject.Models;
 
 import jakarta.persistence.*;
 
-import java.util.Set;
-
 
 @Entity
 @Table
 public class OrderDetail {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    protected Integer orderID;
+    protected Integer orderDetailId;
 
     @Column
     private Integer Quantity;
@@ -23,12 +21,12 @@ public class OrderDetail {
     @JoinColumn(name = "product_ID")
     private Product product;
 
-    public Integer getOrderID() {
-        return orderID;
+    public Integer getOrderDetailId() {
+        return orderDetailId;
     }
 
-    public void setOrderID(Integer orderID) {
-        this.orderID = orderID;
+    public void setOrderDetailId(Integer orderID) {
+        this.orderDetailId = orderID;
     }
 
     public Integer getQuantity() {

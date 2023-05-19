@@ -6,6 +6,7 @@ import org.springframework.data.jpa.repository.JpaRepository;
 public interface SellerRepository extends JpaRepository <Seller, Long>{
     Seller findBySellerID(Long id);
 
+
     //List<Seller> findAllByEmailOrOrderBy
 
 }

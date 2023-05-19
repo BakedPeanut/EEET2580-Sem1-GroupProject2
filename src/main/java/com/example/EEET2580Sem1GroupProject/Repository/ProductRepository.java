@@ -7,4 +7,10 @@ import org.springframework.data.jpa.repository.JpaRepository;
 public interface ProductRepository extends JpaRepository <Product, Long>{
     Product findByProductID(Long id);
 
+    Product findByOrderByPriceAsc();
+
+    Product findByOrderByPriceDesc();
+
+    Product findByName(String name);
+
 }
