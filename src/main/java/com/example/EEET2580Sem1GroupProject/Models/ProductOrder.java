@@ -12,6 +12,9 @@ public class ProductOrder {
     }
 
     public ProductOrder() {
+        if (buyer != null){
+            buyerId = buyer.getBuyerId();
+        }
     }
 
 
@@ -28,7 +31,7 @@ public class ProductOrder {
     private Buyer buyer;
 
 
-    private Long buyerId = buyer.getBuyerID();
+    private Long buyerId;
 
     @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER, mappedBy = "productOrder")
     public Set<OrderDetail> orderDetails;

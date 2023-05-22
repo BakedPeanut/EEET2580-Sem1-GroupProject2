@@ -16,7 +16,7 @@ public class Buyer {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column
-    private Long buyerID;
+    private Long buyerId;
 
     @Column(length = 20, nullable = false, unique = true)
     private String username;
@@ -42,12 +42,12 @@ public class Buyer {
     @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER, mappedBy = "buyer")
     public Set<ProductOrder> productOrders;
 
-    public Long getBuyerID() {
-        return buyerID;
+    public Long getBuyerId() {
+        return buyerId;
     }
 
-    public void setBuyerID(Long buyerID) {
-        this.buyerID = buyerID;
+    public void setBuyerID(Long buyerId) {
+        this.buyerId = buyerId;
     }
 
     public String getUsername() {

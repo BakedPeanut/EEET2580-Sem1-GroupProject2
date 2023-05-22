@@ -37,7 +37,7 @@ public class OrderService {
         orderRepository.delete(order);
     }
     public List<ProductOrder> getOrderbyBuyerId(Long id){
-        return orderRepository.findAllByBuyerID(id);
+        return orderRepository.findAllByBuyerId(id);
     }
 
 }

@@ -42,7 +42,7 @@ public class BuyerService {
         }else return null;
     }
 
-    public Buyer updateBuyer(Long id,Buyer newBuyer){
+    public void updateBuyer(Long id,Buyer newBuyer){
         Buyer buyer = buyerRepository.findByBuyerId(id);
         buyer.setFirstName(newBuyer.getFirstName());
         buyer.setAddress(newBuyer.getAddress());
