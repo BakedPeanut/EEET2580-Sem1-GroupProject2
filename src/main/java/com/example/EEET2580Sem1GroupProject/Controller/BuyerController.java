@@ -56,7 +56,7 @@ public class BuyerController {
         this.buyerService.deleteBuyer(id);
     }
 
-    @GetMapping(path = "/login/{username}/{password}")
+    @GetMapping(path = "login?username={username}?password={password}")
     public Buyer login(@PathVariable String username,@PathVariable String password ){
         return this.buyerService.login(username,password);
     }
