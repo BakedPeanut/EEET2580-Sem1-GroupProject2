@@ -60,4 +60,20 @@ public class BuyerController {
     public Buyer login(@PathVariable String username,@PathVariable String password ){
         return this.buyerService.login(username,password);
     }
+    @PutMapping("/{id}")
+    ResponseEntity<Buyer> updateBuyer(@PathVariable("id") String id, @RequestBody Buyer buyer){
+        if(id.length() == 0) {
+            throw new ParaStringErrorException("Parameter is not a number!");
+        }
+        try {
+            Long buyerId = Long.valueOf(id);
+             buyerService.updateBuyer(buyerId, buyer);
+            if(buyerService.getBuyerById(buyerId) == null) {
+                throw new ParaNumErrorException("User id does not exist!");
+            }
+            return ResponseEntity.ok(buyerService.getBuyerById(buyerId));
+        } catch(NumberFormatException e) {
+            throw new ParaStringErrorException("Parameter is not a number!");
+        }
+    }
 }
