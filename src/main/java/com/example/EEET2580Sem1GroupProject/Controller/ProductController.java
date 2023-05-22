@@ -17,29 +17,29 @@ public class ProductController {
         return productService.getAllProducts();
     }
 
-    @GetMapping(path = "{id}")
+    @GetMapping(path = "/{id}")
     public Product getProductById(@PathVariable Long id){
         return productService.getProductById(id);
     }
 
-    @PostMapping(path = "{id}")
+    @PostMapping(path = "/{id}")
     public void addProduct(@RequestBody Product product, @PathVariable Long id){
         productService.addProduct(product, id);
     }
-    @RequestMapping(path = "{id}", method = RequestMethod.DELETE)
+    @RequestMapping(path = "/{id}", method = RequestMethod.DELETE)
     public void deleteProduct(@PathVariable int id){
         this.productService.deleteProduct(id);
     }
 
-    @GetMapping(path = "priceAsc")
+    @GetMapping(path = "/priceAsc")
     public List<Product> SortByPriceAsc(){return productService.sortByPriceAsc();}
 
-    @GetMapping(path = "priceDesc")
+    @GetMapping(path = "/priceDesc")
     public List<Product> SortByPriceDesc(){return productService.sortByPriceDesc();}
 
-    @GetMapping(path = "{name}")
+    @GetMapping(path = "/{name}")
     public List<Product> FindByName(String name){return productService.findByName(name);}
 
-    @GetMapping(path = "{brand}")
+    @GetMapping(path = "/{brand}")
     public List<Product> FindByBrand(String brand){return productService.findByBrand(brand);}
 }

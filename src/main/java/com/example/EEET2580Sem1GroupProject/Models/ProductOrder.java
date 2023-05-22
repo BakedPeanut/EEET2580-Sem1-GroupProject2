@@ -24,8 +24,11 @@ public class ProductOrder {
     public Seller seller;
 
     @ManyToOne(fetch = FetchType.EAGER)
-    @JoinColumn(name = "buyerID")
+    @JoinColumn(name = "buyer")
     private Buyer buyer;
+
+
+    private Long buyerId = buyer.getBuyerID();
 
     @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER, mappedBy = "productOrder")
     public Set<OrderDetail> orderDetails;
@@ -36,6 +39,14 @@ public class ProductOrder {
 
     public void setOrderID(Integer orderID) {
         this.orderID = orderID;
+    }
+
+    public Long getBuyerId() {
+        return buyerId;
+    }
+
+    public void setBuyerId(Long buyerId) {
+        this.buyerId = buyerId;
     }
 
 }

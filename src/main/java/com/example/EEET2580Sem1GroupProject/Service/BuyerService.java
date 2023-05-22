@@ -19,7 +19,7 @@ public class BuyerService {
     }
 
     public Buyer getBuyerById(Long id){
-        return buyerRepository.findByBuyerID(id);
+        return buyerRepository.findByBuyerId(id);
     }
 
     public void addBuyer(Buyer seller){
@@ -29,6 +29,17 @@ public class BuyerService {
     public void deleteBuyer(Long id){
         Buyer buyer = buyerRepository.getOne(Long.valueOf(id));
         buyerRepository.delete(buyer);
+    }
+    public boolean loginCheck(String username,String password){
+        Buyer buyer = buyerRepository.findByUsernameAndPassword(username,password);
+        if (buyer !=null){
+            return true;
+        }else return false;
+    }
+    public Buyer login(String username,String password){
+        if (loginCheck(username,password)){
+            return buyerRepository.findByUsernameAndPassword(username,password);
+        }else return null;
     }
 
 }

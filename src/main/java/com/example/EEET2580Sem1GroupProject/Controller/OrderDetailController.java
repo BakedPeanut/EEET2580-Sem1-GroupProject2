@@ -21,16 +21,16 @@ public class OrderDetailController {
         return orderDetailService.getAllOrderDetail();
     }
 
-    @GetMapping(path = "{id}")
+    @GetMapping(path = "/{id}")
     public OrderDetail getProductById(@PathVariable Long id){
         return orderDetailService.getOrderDetailById(id);
     }
 
-    @PostMapping(path = "{id}")
+    @PostMapping(path = "/{id}")
     public void addProduct(@RequestBody OrderDetail orderDetail, @PathVariable int id){
         orderDetailService.addOrderDetail(orderDetail, id);
     }
-    @RequestMapping(path = "{id}", method = RequestMethod.DELETE)
+    @RequestMapping(path = "/{id}", method = RequestMethod.DELETE)
     public void deleteOrderDetail(@PathVariable int id){
         this.orderDetailService.deleteOrderDetail(id);
     }

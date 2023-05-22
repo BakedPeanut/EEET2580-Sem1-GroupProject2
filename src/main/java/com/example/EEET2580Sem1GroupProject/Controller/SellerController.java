@@ -19,7 +19,7 @@ public class SellerController {
         return sellerService.getAllSeller();
     }
 
-    @GetMapping(path = "{id}")
+    @GetMapping(path = "/{id}")
     public Seller getSellerById(@PathVariable Long id){
         return sellerService.getSellerById(id);
     }
@@ -29,7 +29,7 @@ public class SellerController {
         sellerService.addSeller(seller);
     }
 
-    @RequestMapping(path = "{id}", method = RequestMethod.DELETE)
+    @RequestMapping(path = "/{id}", method = RequestMethod.DELETE)
     public void deleteSeller(@PathVariable int id){
         this.sellerService.deleteSeller(id);
     }

@@ -1,8 +1,10 @@
 package com.example.EEET2580Sem1GroupProject.Service;
 
+import com.example.EEET2580Sem1GroupProject.Models.Buyer;
 import com.example.EEET2580Sem1GroupProject.Models.Product;
 import com.example.EEET2580Sem1GroupProject.Models.ProductOrder;
 import com.example.EEET2580Sem1GroupProject.Models.Seller;
+import com.example.EEET2580Sem1GroupProject.Repository.BuyerRepository;
 import com.example.EEET2580Sem1GroupProject.Repository.OrderDetailRepository;
 import com.example.EEET2580Sem1GroupProject.Repository.OrderRepository;
 import com.example.EEET2580Sem1GroupProject.Repository.ProductRepository;
@@ -33,6 +35,9 @@ public class OrderService {
     public void deleteOrder(Long id){
         ProductOrder order = orderRepository.getOne(Long.valueOf(id));
         orderRepository.delete(order);
+    }
+    public List<ProductOrder> getOrderbyBuyerId(Long id){
+        return orderRepository.findAllByBuyerID(id);
     }
 
 }

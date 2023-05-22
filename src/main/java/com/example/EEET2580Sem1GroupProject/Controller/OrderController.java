@@ -21,16 +21,16 @@ public class OrderController {
         return orderService.getAllOrder();
     }
 
-    @GetMapping(path = "{id}")
+    @GetMapping(path = "/{id}")
     public ProductOrder getOrderById(@PathVariable Long id){
         return orderService.getOrderById(id);
     }
 
-    @PostMapping(path = "{id}")
+    @PostMapping(path = "/{id}")
     public void addOrder(@RequestBody ProductOrder productOrder){
         orderService.addOrder(productOrder);
     }
-    @RequestMapping(path = "{id}", method = RequestMethod.DELETE)
+    @RequestMapping(path = "/{id}", method = RequestMethod.DELETE)
     public void deleteOrder(@PathVariable Long id){
         this.orderService.deleteOrder(id);
     }
