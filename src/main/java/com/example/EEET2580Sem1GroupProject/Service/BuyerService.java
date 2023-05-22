@@ -22,8 +22,8 @@ public class BuyerService {
         return buyerRepository.findByBuyerId(id);
     }
 
-    public void addBuyer(Buyer seller){
-        buyerRepository.save(seller);
+    public void addBuyer(Buyer buyer){
+        buyerRepository.save(buyer);
     }
 
     public void deleteBuyer(Long id){
